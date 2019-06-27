@@ -1,0 +1,14 @@
+users :
+id, fullname , username , password , type , active (type: 1-user , 2-admin)
+
+departments :
+id, name
+
+user_departments :
+id, user_id , departments_id , active
+
+user_communicate :
+id, user_id , department_id , title , description , active
+
+user_payment :
+id , user_id , department_id,  code , price , title , description , active ( user payment in departments )
