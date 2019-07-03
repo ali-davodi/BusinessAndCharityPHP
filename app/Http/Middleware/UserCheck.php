@@ -56,6 +56,7 @@ class UserCheck
                     'read'=>0,
                     'active'=>1
                 ])->get();
+                $user_data->communication = DB::table('departments')->get();
                 $request->user = $user_data;
                 $request->isLogin = 1;
                 if($from_login_form){

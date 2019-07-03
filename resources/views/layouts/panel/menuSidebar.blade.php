@@ -38,20 +38,20 @@
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-tachometer-alt"></i>Payments</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                @if ($admin_login)
+                                <li>
+                                    <a href="/payments/list">List</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="active has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-tachometer-alt"></i>Communications</a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                @foreach ($user->communication as $communicate)
                                     <li>
-                                        <a href="/payments/list">List</a>
+                                        <a href="/communications/{{ $communicate->id }}">{{ $communicate->name }}</a>
                                     </li>
-                                @else
-                                    <li>
-                                        <a href="/departments/request">Request for Departments</a>
-                                    </li>
-                                    @foreach ($user->departments as $department)
-                                        <li>
-                                            <a href="/departments/list/{{ $department->id }}-{{ $department->name }}">{{ $department->name }}</a>
-                                        </li>
-                                    @endforeach
-                                @endif
+                                @endforeach
                             </ul>
                         </li>
                     @endif

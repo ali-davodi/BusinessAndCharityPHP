@@ -29,7 +29,7 @@
                                         <div class="center-div"><a href="/payment/{{ $id }}/"><button type="button" class="btn btn-success"><i class="zmdi zmdi-money"></i> Add A Payment</button></a></div>
                                     </div>
                                     <div class="col-5">
-                                        <div class="center-div"><button type="button" class="btn btn-secondary"><i class="zmdi zmdi-email"></i> Send A Communication</button></div>
+                                        <div class="center-div"><a href="/communication/{{ $id }}/"><button type="button" class="btn btn-secondary"><i class="zmdi zmdi-email"></i> Send A Communication</button></a></div>
                                     </div>
                                     <div class="col-1"></div>
                                 </div>

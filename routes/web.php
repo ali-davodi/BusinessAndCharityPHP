@@ -30,4 +30,11 @@ Route::match(['get', 'post'], '/payment/{id}/delete', 'Payment@delete')->middlew
 Route::match(['get', 'post'], '/payments/list', 'Payment@list')->middleware('user.check');
 Route::match(['get', 'post'], '/payments/act/{id}/{act}', 'Payment@paymentAct')->middleware('user.check');
 Route::match(['get', 'post'], '/payments/delete/{id}', 'Payment@paymentDelete')->middleware('user.check');
+
+Route::match(['get', 'post'], '/communication/{id}', 'Communication@request')->middleware('user.check');
+Route::match(['get', 'post'], '/communication/{id}/create', 'Communication@create')->middleware('user.check');
+Route::match(['get', 'post'], '/communications/{id}', 'Communication@list')->middleware('user.check');
+Route::match(['get', 'post'], '/communications/delete/{id}', 'Communication@communicationDelete')->middleware('user.check');
+Route::match(['get', 'post'], '/communications/{id}/create', 'Communication@communicationCreate')->middleware('user.check');
+
 Route::get('/logout', "UserProfile@logout")->middleware('user.check');
