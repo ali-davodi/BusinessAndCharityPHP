@@ -309,6 +309,11 @@ section {
 .main-content {
     padding-top: 116px;
     min-height: 100vh;
+    margin-left: 300px;
+}
+
+.panel-logo-size {
+    width: 50px;
 }
 
 @media (max-width: 991px) {
@@ -321,14 +326,34 @@ section {
     background: #f7f7f7;
 }
 
+.left-div {
+    text-align: left;
+}
+
+.center-div {
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.alert-margin {
+    margin: 10px;
+}
+
+.alert-margin ul {
+    list-style-type: none;
+}
+
 .page-content--bge5 {
     background: #e5e5e5;
     height: 100vh;
 }
 
 .login-wrap {
-    max-width: 540px;
-    padding-top: 8vh;
+    max-width: 750px;
+    padding-top: 4vh;
     margin: 0 auto;
 }
 

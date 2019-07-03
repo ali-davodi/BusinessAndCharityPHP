@@ -41,6 +41,7 @@ class CreateAllTable extends Migration
             $table->integer('department_id');
             $table->text('title');
             $table->text('description');
+            $table->integer('read');
             $table->integer('active');
             $table->timestamps();
         });

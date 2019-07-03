@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::match(['get', 'post'], '/', 'UserProfile@show')->middleware('user.check');
+Route::get('/logout', "UserProfile@logout")->middleware('user.check');
