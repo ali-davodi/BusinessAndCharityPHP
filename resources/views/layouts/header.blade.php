@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <title>User Login</title>
+        <title>{{ $page['title'] ?  $page['title'] : 'No Title' }}</title>
 
         <!-- Fontfaces CSS-->
         <link href="{{ asset('css/font-face.css') }}" rel="stylesheet" media="all">

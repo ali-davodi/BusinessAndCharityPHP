@@ -34,26 +34,29 @@ class UserCheck
             $type = $request->get('type');
             $pass = md5(sha1(sha1(md5($pass))));
         }
-        if($user && $pass){
+        if($user && $pass && $type){
             $user_count = DB::table('users')->where([
                 'username'=>$user,
                 'password'=>$pass,
                 'type'=>$type,
                 'active'=>1
             ])->get();
-            if($user_count[0]){
-                $user = $user_count[0];
-                $user_id = $user->id;
-                $user->departments = DB::table('user_departments')->where([
+            if(isset($user_count) && isset($user_count[0])){
+                $user_data = $user_count[0];
+                $user_id = $user_data->id;
+                $user_data->departments = DB::table('user_departments')
+                    ->join('departments', 'departments.id', '=', 'user_departments.department_id')
+                    ->where([
                     'user_id'=>$user_id,
-                    'active'=>1
+                    'user_departments.active'=>1
                 ])->get();
-                $user->communicate = DB::table('user_communicate')->where([
+                $user_data->communicate = DB::table('user_communicate')
+                ->where([
                     'user_id'=>$user_id,
                     'read'=>0,
                     'active'=>1
                 ])->get();
-                $request->user = $user;
+                $request->user = $user_data;
                 $request->isLogin = 1;
                 if($from_login_form){
                     session(['username'=>$user, 'password'=>$pass, 'type'=>$type]);

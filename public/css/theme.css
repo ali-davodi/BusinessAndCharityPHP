@@ -274,7 +274,7 @@ section {
 
 /*Page Objects*/
 .page-wrapper {
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .page-container {
@@ -302,6 +302,10 @@ section {
     }
 }
 
+.logo-img {
+    width: 150px;
+}
+
 .page-container3 {
     background: #f7f7f7;
 }
@@ -312,6 +316,10 @@ section {
     margin-left: 300px;
 }
 
+.width-100 {
+    width: 100%;
+}
+
 .panel-logo-size {
     width: 50px;
 }
@@ -319,6 +327,7 @@ section {
 @media (max-width: 991px) {
     .main-content {
         padding-top: 50px;
+        margin-left: 0px;
     }
 }
 
@@ -348,7 +357,8 @@ section {
 
 .page-content--bge5 {
     background: #e5e5e5;
-    height: 100vh;
+    /* height: 100vh; */
+    padding-bottom: 20px;
 }
 
 .login-wrap {
@@ -402,6 +412,7 @@ section {
 .login-content {
     background: #fff;
     padding: 30px 30px 20px;
+    padding-top: 10px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
@@ -754,6 +765,11 @@ section {
     -o-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     transition: all 0.5s ease;
+}
+
+.animsition {
+    background: #e5e5e5;
+    overflow-x: hidden;
 }
 
 .au-input--full {

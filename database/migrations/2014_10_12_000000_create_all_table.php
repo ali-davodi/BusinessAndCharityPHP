@@ -18,7 +18,7 @@ class CreateAllTable extends Migration
             $table->string('fullname');
             $table->string('username')->unique();
             $table->string('password');
-            $table->integer('type');
+            $table->string('type');
             $table->integer('active');
             $table->rememberToken();
             $table->timestamps();
@@ -26,6 +26,8 @@ class CreateAllTable extends Migration
         Schema::create('departments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->text('description');
+            $table->integer('active');
             $table->timestamps();
         });
         Schema::create('user_departments', function (Blueprint $table) {
